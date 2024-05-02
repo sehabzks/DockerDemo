@@ -17,12 +17,5 @@ pipeline {
                 }
             }
         }
-        stage('Push image to Hub') {
-            steps {
-                script {
-                    docker.image("demo12:${env.BUILD_NUMBER}").run("-d -p 8080:8080 --name demo-container")
-                }
-            }
-        }
     }
 }
