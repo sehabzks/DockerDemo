@@ -10,12 +10,18 @@ pipeline {
                 bat 'mvn clean install'
             }
         }
+        stage('Stop and Remove Existing Container') {
+            steps {
+                script {
+                    bat 'docker stop demo-container'
+                    bat 'docker rm demo-container'
+                }
             }
         }
         stage('Build docker image') {
             steps {
                 script {
-                    sh 'docker build -t sehabzks/DockerDemo'
+                    docker.build("demo12:${env.BUILD_NUMBER}")
                 }
             }
         }
