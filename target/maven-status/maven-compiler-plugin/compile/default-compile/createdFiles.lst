@@ -1,2 +1,2 @@
-com\example\dockerOdev\Controller.class
-DemoApplication.class
+com\dockerDemo\demo\Controller.class
+com\dockerDemo\demo\DemoApplication.class
